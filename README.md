@@ -12,8 +12,11 @@ Spring Boot DevTools est un ensemble d'outils de développement pour les applica
 ## [Thymeleaf](https://www.thymeleaf.org/)
 Thymeleaf est un moteur de template utilisé pour générer des vues dans les applications Spring Boot. Il permet de créer des modèles de pages web en utilisant des balises HTML standard et des expressions de données pour insérer des données dans les pages. Il prend en charge les fonctionnalités avancées telles que la gestion des erreurs, la sécurité, les formulaires, etc. Il intègre également bien avec Spring, en offrant des fonctionnalités pour les formulaires, les messages de validation, les liens, etc. Il offre une syntaxe propre, facile à utiliser, et une bonne performance en termes de temps d'exécution. Il facilite la création des vues pour les applications web, en se concentrant sur la présentation des données plutôt que sur la logique de l'application.
 1. Avec quelle partie du code avons-nous paramétré l'url d'appel /greeting ?
+
 L'URL d'appel /greeting est paramétrée avec l'annotation @GetMapping("/greeting"). Cette annotation permet de mapper les requêtes HTTP GET à une méthode spécifique dans le contrôleur.
 2. Avec quelle partie du code avons-nous choisi le fichier HTML à afficher ?
+
 Le fichier HTML à afficher est choisi avec la méthode "return "greeting";" de la fonction greeting(). Cette méthode retourne une chaîne de caractères qui correspond au nom de la vue. Dans ce cas, cela correspond au nom du fichier "greeting.html" dans le répertoire des vues.
 3. Comment envoyons-nous le nom à qui nous disons bonjour avec le second lien ?
+
 Le nom à qui nous disons bonjour avec le second lien est envoyé en utilisant l'annotation @RequestParam et la méthode addAttribute() de l'objet Model. L'annotation @RequestParam permet de récupérer les paramètres de la requête HTTP, ici "nameGET", qui est utilisé pour définir le nom par défaut "World" si il n'est pas fourni. Le nom est ensuite ajouté à l'objet Model avec la méthode addAttribute() pour être utilisé dans la vue. Dans ce cas, il est utilisé dans la vue sous le nom "nomTemplate".
