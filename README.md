@@ -11,6 +11,8 @@ H2 Database est un système de gestion de base de données relationnelle open so
 Spring Boot DevTools est un ensemble d'outils de développement pour les applications Spring Boot. Il permet de faciliter le développement et le débogage en offrant des fonctionnalités telles que le rechargement automatique des ressources, la surveillance des modifications de fichiers, l'accès à des informations de débogage, etc. Il permet également de configurer les propriétés de l'application de manière dynamique sans avoir à redémarrer l'application. Il permet de gagner du temps lors du développement en évitant les temps de redémarrage longs et en facilitant la mise au point des applications.
 ## [Thymeleaf](https://www.thymeleaf.org/)
 Thymeleaf est un moteur de template utilisé pour générer des vues dans les applications Spring Boot. Il permet de créer des modèles de pages web en utilisant des balises HTML standard et des expressions de données pour insérer des données dans les pages. Il prend en charge les fonctionnalités avancées telles que la gestion des erreurs, la sécurité, les formulaires, etc. Il intègre également bien avec Spring, en offrant des fonctionnalités pour les formulaires, les messages de validation, les liens, etc. Il offre une syntaxe propre, facile à utiliser, et une bonne performance en termes de temps d'exécution. Il facilite la création des vues pour les applications web, en se concentrant sur la présentation des données plutôt que sur la logique de l'application.
+## Q&A
+
 1. Avec quelle partie du code avons-nous paramétré l'url d'appel /greeting ?
 
 L'URL d'appel /greeting est paramétrée avec l'annotation @GetMapping("/greeting"). Cette annotation permet de mapper les requêtes HTTP GET à une méthode spécifique dans le contrôleur.
@@ -22,3 +24,15 @@ Le fichier HTML à afficher est choisi avec la méthode "return "greeting";" de 
 3. Comment envoyons-nous le nom à qui nous disons bonjour avec le second lien ?
 
 Le nom à qui nous disons bonjour avec le second lien est envoyé en utilisant l'annotation @RequestParam et la méthode addAttribute() de l'objet Model. L'annotation @RequestParam permet de récupérer les paramètres de la requête HTTP, ici "nameGET", qui est utilisé pour définir le nom par défaut "World" si il n'est pas fourni. Le nom est ensuite ajouté à l'objet Model avec la méthode addAttribute() pour être utilisé dans la vue. Dans ce cas, il est utilisé dans la vue sous le nom "nomTemplate".
+
+4. Avez-vous remarqué une différence ? Ajoutez la réponse dans le README.
+
+une table Adresse a ete ajoute.
+
+5. Expliquez l'apparition de la nouvelle table en vous aidant de vos cours sur Hibernate, et de la  dépendance Hibernate de Spring.
+
+Lorsque Spring Boot est configuré pour utiliser Hibernate en tant que gestionnaire de persistance, Hibernate va automatiquement créer les tables de la base de données en fonction des entités déclarées dans l'application. Cela est possible grâce à la propriété "hibernate.hbm2ddl.auto" qui peut être configurée pour différentes valeurs telles que "create", "create-drop", "update" etc. Si cette propriété est définie sur "create" ou "create-drop", Hibernate va automatiquement créer les tables de la base de données en fonction des entités déclarées. Dans ce cas, on peut voir l'apparition de la nouvelle table qui est générée automatiquement à partir de l'entité déclarée.
+
+6. Pouvez-vous trouver à quoi sert l'annotation @Autowired du code précèdent sur internet ?
+
+@Autowired est une annotation de Spring qui permet d'injecter automatiquement une dépendance dans un bean géré par Spring. Dans le code précédent, elle est utilisée pour injecter l'instance d'AddressRepository dans le champ addressRepository de la classe AddressController. Cela signifie que Spring va créer une instance d'AddressRepository et l'injecter dans le champ addressRepository de la classe AddressController, pour que cette dernière puisse utiliser les méthodes de AddressRepository pour récupérer les données de la base de données.
