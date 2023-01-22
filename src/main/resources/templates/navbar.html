@@ -1,11 +1,23 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <script th:src="@{/bootstrap.js}"></script>
+</head>
 <div th:fragment="navbar">
-<nav>
-    <ul>
-        <li><a th:href="@{/greeting}" th:text="Home"></a></li>
-        <li><a th:href="@{/h2-console}" th:text="H2_console"></a></li>
-        <li><a th:href="@{/Adresses}" th:text="Addresses"></a></li>
-    </ul>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a th:href="@{/greeting}" th:text="Home" class="nav-link"></a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/h2-console}" th:text="H2_console" class="nav-link"></a>
+                </li>
+                <li class="nav-item">
+                <li><a th:href="@{/adresses}" th:text="Addresses" class="nav-link"></a></li>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </div>
